@@ -115,14 +115,14 @@ Next Step을 선택 후, ‘Step 2: Actions’ 항목으로 넘어갑니다.
 
 그러면, 정상 동작했는지 테스트해볼까요? 생성한 수신자로 이메일을 보내봅니다. receipt@myreceipt.net으로 메일을 보냈습니다. 
 
-![1-17. Send a mail from Gmail](https://github.com/0kim/myReceipts/blob/master/images/1/1-17.png | width=300)
+![1-17. Send a mail from Gmail](https://raw.githubusercontent.com/0kim/myReceipts/master/images/1/1-17.png | width=300)
 
 
 ‘myreceipt-bucket’ S3 버킷을 확인합니다. 보낸 메시지가 저장되었다면, 아래와 같은 화면을 볼 수 있습니다. 
 메시지를 다운로드 받아 내가 보낸 메일이 맞는지 확인해 봅시다. 
 
 ![1-18. Mail received in S3](https://github.com/0kim/myReceipts/blob/master/images/1/1-18.png?raw=true)
-![1-19. received mail text](https://github.com/0kim/myReceipts/blob/master/images/1/1-19.png | width=400) 
+![1-19. received mail text](https://raw.githubusercontent.com/0kim/myReceipts/master/images/1/1-19.png | width=400) 
 
 여기까지 도메인 등록에서 부터 수신 이메일 주소를 생성하고 동작확인하는 과정을 모두 거쳤습니다. 아래의 3가지에서 모두 성공하였다면 이번 챕터는 Pass입니다. 
 
