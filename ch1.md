@@ -1,6 +1,3 @@
-myReceipts | 1. AWS에서 도메인 등록과, 이메일 수신 하기
-
-
 # 0. 시작 
 
 본 챕터의 목표는 수신용 이메일 주소 만들기 입니다. AWS에서 도메인을 등록하고 수신 이메일 주소를 생성하는(이메인 수신 규칙을 생성하는) 과정을 순서대로 설명하겠습니다. 
@@ -9,7 +6,7 @@ myReceipts | 1. AWS에서 도메인 등록과, 이메일 수신 하기
 
 AWS Console에서는 도메인을 등록, 네임서버 설정, 수신 이메일 생성 등을 몇 번의 타이핑과 클릭으로 쉽게 할 수 있습니다. 
 
-1. 도메인 등록 
+# 1. 도메인 등록 
 
 Route 53(https://console.aws.amazon.com/route53) Console 화면으로 이동합니다. 아쉽게도 Route 53 페이지는 한글화되지 않았네요. 친절하게 ‘Register Domain’ 항목이 처음화면에 있습니다. 본인이 사용하고 싶은 도메인 이름을 입력하고 최상위 도메인(.com, .net 등)을 선택합니다.  Check를 선택합니다. 
 
@@ -118,14 +115,14 @@ Next Step을 선택 후, ‘Step 2: Actions’ 항목으로 넘어갑니다.
 
 그러면, 정상 동작했는지 테스트해볼까요? 생성한 수신자로 이메일을 보내봅니다. receipt@myreceipt.net으로 메일을 보냈습니다. 
 
-![1-17. Send a mail from Gmail](https://github.com/0kim/myReceipts/blob/master/images/1/1-17.png?raw=true)
+![1-17. Send a mail from Gmail](https://github.com/0kim/myReceipts/blob/master/images/1/1-17.png?raw=true  =300x)
 
 
 ‘myreceipt-bucket’ S3 버킷을 확인합니다. 보낸 메시지가 저장되었다면, 아래와 같은 화면을 볼 수 있습니다. 
 메시지를 다운로드 받아 내가 보낸 메일이 맞는지 확인해 봅시다. 
 
 ![1-18. Mail received in S3](https://github.com/0kim/myReceipts/blob/master/images/1/1-18.png?raw=true)
-![1-19. received mail text](https://github.com/0kim/myReceipts/blob/master/images/1/1-19.png?raw=true)
+![1-19. received mail text](https://github.com/0kim/myReceipts/blob/master/images/1/1-19.png?raw=true =400x) 
 
 여기까지 도메인 등록에서 부터 수신 이메일 주소를 생성하고 동작확인하는 과정을 모두 거쳤습니다. 아래의 3가지에서 모두 성공하였다면 이번 챕터는 Pass입니다. 
 
