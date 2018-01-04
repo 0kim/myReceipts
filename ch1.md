@@ -2,13 +2,13 @@
 
 본 챕터의 목표는 수신용 이메일 주소 만들기 입니다. AWS에서 도메인을 등록하고 수신 이메일 주소를 생성하는(이메인 수신 규칙을 생성하는) 과정을 순서대로 설명하겠습니다. 
 
-제일 먼저 할 일은 돈을 쓰는 도메인을 등록하는 것 입니다.  다음으로, Simple Email Service(SES)를 이용하여, 등록한 도메인으로 이메일 주소(수신용)를 생성할 것 입니다. 도메인을 등록해서, 수신 이메일 주소를 설정하는 과정까지 진행해봅시다. 
+제일 먼저 할 일은 ~~돈을 쓰는~~ 도메인을 등록하는 것 입니다.  다음으로, Simple Email Service(SES)를 이용하여, 등록한 도메인으로 이메일 주소(수신용)를 생성할 것 입니다. 도메인을 등록해서, 수신 이메일 주소를 설정하는 과정까지 진행해봅시다. 
 
 AWS Console에서는 도메인을 등록, 네임서버 설정, 수신 이메일 생성 등을 몇 번의 타이핑과 클릭으로 쉽게 할 수 있습니다. 
 
 # 1. 도메인 등록 
 
-Route 53(https://console.aws.amazon.com/route53) Console 화면으로 이동합니다. 아쉽게도 Route 53 페이지는 한글화되지 않았네요. 친절하게 ‘Register Domain’ 항목이 처음화면에 있습니다. 본인이 사용하고 싶은 도메인 이름을 입력하고 최상위 도메인(.com, .net 등)을 선택합니다.  Check를 선택합니다. 
+<a href="https://console.aws.amazon.com/route53" target="_blank">Route 53 Console</a>로 이동합니다. 아쉽게도 Route 53 페이지는 한글화되지 않았네요. 친절하게 ‘Register Domain’ 항목이 처음화면에 있습니다. 본인이 사용하고 싶은 도메인 이름을 입력하고 최상위 도메인(.com, .net 등)을 선택합니다.  Check를 선택합니다. 
 
 저는 결제내역(영수증)을 수집할 것 이기 때문에, myreceipt.net 이름으로 도메인을 결정하였습니다. 
 
@@ -41,7 +41,7 @@ Complete Purchase로 구매를 진행합니다. 카드 해외 결제 승인이 �
 
 다시, Route 53 Console의 처음 화면으로 이동합니다. 아래 그림 처럼 등록이 완료되었네요. DNS Management 항목의 Hosted zones 숫자가 1 증가했습니다. Hosted zone은 도메인 관리를 위한 도메인 네임 서버라고 보시면 됩니다. 
 
-1개의 Hosted Zone에 대해 $0.5 씩 과금되며, 1백만 쿼리 당 $ 0.4가 과금됩니다. 상세한 과금정책은 여기(https://aws.amazon.com/ko/route53/pricing/)를 확인하시기 바랍니다.
+1개의 Hosted Zone에 대해 $0.5 씩 과금되며, 1백만 쿼리 당 $ 0.4가 과금됩니다. 상세한 과금정책은 여기(<a href="https://aws.amazon.com/ko/route53/pricing/" target="_blank">https://aws.amazon.com/ko/route53/pricing/</a>)를 확인하시기 바랍니다.
 
 Hosted zones(호스팅 영역)을 선택하여 설정 내용을 확인합니다. 
 ![1-6. Hosted zone](https://github.com/0kim/myReceipts/blob/master/images/1/1-6.png?raw=true)
@@ -57,11 +57,11 @@ myreceipt.net 도메인이 잘 등록되어있네요.
 
 # 3. 수신용 이메일 주소 등록 하기 
 
-이제 Simple Email Service(SES)를 이용하여 수신용 이메일 주소를 등록해 봅시다. 이메일 주소라고 했지만, 생각했던 Gmail, 네이버와 같은 이메일 서비스를 생각하셨다면 놀라셨을 것 입니다. 흔히 생각하는 Gmail/네이버 메일 서비스와는 큰차이가 있습니다. 이런 메일 서비스는 이메일 서버+클라이언트의 조합이죠. 이에 반해서 SES는 이름 그대로 Simple한 낮은 수준의 이메일 서비스입니다. 대량 이메일 발송이나 특정 서비스의 메시지 수신 용도 등의 메시징 용도로 사용하기 좋습니다. SES에 대해 자세한 내용은 여기를 참고하세요. ( https://aws.amazon.com/ko/ses/details/ )
+이제 Simple Email Service(SES)를 이용하여 수신용 이메일 주소를 등록해 봅시다. 이메일 주소라고 했지만, 생각했던 Gmail, 네이버와 같은 이메일 서비스를 생각하셨다면 놀라셨을 것 입니다. 흔히 생각하는 Gmail/네이버 메일 서비스와는 큰차이가 있습니다. 이런 메일 서비스는 이메일 서버+클라이언트의 조합이죠. 이에 반해서 SES는 이름 그대로 Simple한 낮은 수준의 이메일 서비스입니다. 대량 이메일 발송이나 특정 서비스의 메시지 수신 용도 등의 메시징 용도로 사용하기 좋습니다. SES에 대해 자세한 내용은 여기를 참고하세요. (<a href="https://aws.amazon.com/ko/ses/details/" target="_blank">https://aws.amazon.com/ko/ses/details/</a>)
 
 SES Console 화면으로 이동합니다. SES는 한국 리전에 없으며, N. Virginia, Oregon 및 Ireland. 현재는 세 곳에서만 사용할 수 있습니다. 우리는 N. Virginia(us-east-1)을 사용하기로 합니다. 
 
-* SES Console - https://console.aws.amazon.com/ses/home?region=us-east-1
+* SES Console - <a href="https://console.aws.amazon.com/ses/home?region=us-east-1" target="_blank">https://console.aws.amazon.com/ses/home?region=us-east-1</a> 
 
 Email Receiving(이메일 수신) 항목의 Rule Sets(규칙 세트)를 선택합니다. 
 
