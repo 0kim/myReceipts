@@ -7,7 +7,7 @@ myReceipts는 이메일로 발송 되는 카드결제 내역을 Google Spreadshe
 
 ## 목차
 1. <a href="https://github.com/0kim/myReceipts/blob/master/ch1.md" target="_blank">AWS에서 도메인 등록과, 이메일 수신 하기</a> - Route 53, SES, S3
-2. 결제내역 이메일과 Google Spreadsheet 준비하기
+2. <a href="https://github.com/0kim/myReceipts/blob/master/ch2.md" target="_blank">결제내역 이메일과 Google Spreadsheet 준비하기</a>
 3. Google Spreadsheet로 API 연결하기
 4. Lambda 함수로 이메일과 Sheet를 연결하기 - Lambda, Cloudwatch
 5. 서비스 운영하기 
